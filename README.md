@@ -1,1 +1,1 @@
-# C-InventorySystem
+# C++ Inventory System
