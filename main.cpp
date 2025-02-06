@@ -13,9 +13,9 @@ void viewInventory(const Y::Inventory& inventory);
 void addItem(Y::Inventory& inventory);
 void removeItem(Y::Inventory& inventory);
 void updateItem(Y::Inventory& inventory);
-bool tryParseInt(string& input);
-bool tryParseDouble(string& input);
-void displayItemsWithIndex (vector<M::Item> items);
+bool tryParseInt(const string& input);
+bool tryParseDouble(const string& input);
+void displayItemsWithIndex (const vector<M::Item>& items);
 
 int main() {
     // Initialize new inventory with items in vector
@@ -200,7 +200,7 @@ void updateItem(Y::Inventory& inventory) {
     inventory.setItems(inventoryItems);
 }
 
-void displayItemsWithIndex (vector<M::Item> items) {
+void displayItemsWithIndex (const vector<M::Item>& items) {
     // Print column headers
     cout << endl;
     cout << left << setw(10) << "Index"
@@ -209,13 +209,13 @@ void displayItemsWithIndex (vector<M::Item> items) {
          << setw(10) << "Quantity" << endl;
     int i = 0;
     for (const M::Item& item : items) {
-        cout << left << setw(10) << to_string(i) 
+        cout << left << setw(10) << to_string(i)
              << item.displayDetails();
         i++;
     }
 }
 
-bool tryParseInt(string& input) {
+bool tryParseInt(const string& input) {
     try {
         stoi(input);
     } catch (invalid_argument) {
@@ -223,7 +223,7 @@ bool tryParseInt(string& input) {
     }
     return true;
 }
-bool tryParseDouble(string& input) {
+bool tryParseDouble(const string& input) {
     try {
         stod(input);
     } catch (invalid_argument) {
