@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "clang++",
+      "args": ["-g", "-std=c++17", "main.cpp", "item.cpp", "inventory.cpp", "-o", "inventorySystem", "-arch", "arm64"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
